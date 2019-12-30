@@ -135,6 +135,9 @@ void onWsEvent(AsyncWebSocket * server, AsyncWebSocketClient * client, AwsEventT
     if (data_str == "LED_ON") {
       //digitalWrite(LED, 0); // Khi client phát sự kiện "LED_ON" thì server sẽ bật LED
       selfControl = true;
+      //Stop robot to config
+      lbase_speed = 0;
+      rbase_speed = 0;
       Serial.println("SELF CONTROL MODE");
       Serial.println("--------------");
     } else if (data_str == "LED_OFF") {
